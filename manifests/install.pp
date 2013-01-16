@@ -37,7 +37,5 @@ class solr::install {
     notify  => Service['tomcat7'],
   }
 
-  # TODO: tidy { ... }
-
 }
 

@@ -39,12 +39,16 @@ class solr(
   $version       = '4.0.0',
   $apache_mirror = 'http://apache.claz.org',
   $tomcat_user   = 'tomcat',
-  $tomcat_passwd = 'tomcat'
+  $tomcat_passwd = 'tomcat',
+  $solr_home     = '/var/lib/solr',
+  $solr_core     = 'collection1'
 ) {
 
   class { 'solr::install' : } ->
   class { 'solr::config'  : } ->
   class { 'solr::service' : } ->
   Class['solr']
+
+  # TODO: tidy { ... }
 
 }
