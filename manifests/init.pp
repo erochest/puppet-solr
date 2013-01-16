@@ -35,7 +35,13 @@
 #
 # Copyright 2013 Your name here, unless otherwise noted.
 #
-class solr {
+class solr(
+  $version       = '4.0.0',
+  $apache_mirror = 'http://apache.claz.org'
+) {
 
+  class { 'solr::install' : } ->
+  class { 'solr::service' : } ->
+  Class['solr']
 
 }
