@@ -4,7 +4,11 @@ class solr::install {
   $version = $solr::version
   $tmpfile = '/tmp/apache-solr.tgz'
 
-  package { 'tomcat7':
+  package { 'tomcat7' :
+    ensure => installed,
+  }
+
+  package { 'tomcat7-admin' :
     ensure => installed,
   }
 
