@@ -36,7 +36,7 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class solr(
-  $version       = '4.0.0',
+  $version       = '4.3.0',
   $apache_mirror = 'http://apache.claz.org',
   $tomcat_user   = 'tomcat',
   $tomcat_passwd = 'tomcat',

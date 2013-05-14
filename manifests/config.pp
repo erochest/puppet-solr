@@ -44,7 +44,7 @@ class solr::config {
 
   file { 'Solr conf directory' :
     path    => "$solr_home/$solr_core/conf",
-    source  => "/tmp/apache-solr-$version/example/solr/collection1/conf",
+    source  => "/tmp/solr-$version/example/solr/collection1/conf",
     recurse => true,
     owner   => 'tomcat7',
     group   => 'tomcat7',

@@ -17,7 +17,7 @@ class solr::install {
   }
 
   exec { "curl > $tmpfile" : 
-    command => "curl -o $tmpfile $mirror/lucene/solr/$version/apache-solr-$version.tgz",
+    command => "curl -o $tmpfile $mirror/lucene/solr/$version/solr-$version.tgz",
     path    => ['/usr/bin'],
     cwd     => '/tmp',
     creates => $tmpfile,
@@ -32,7 +32,7 @@ class solr::install {
   }
 
   file { '/var/lib/tomcat7/webapps/solr.war' :
-    source  => "/tmp/apache-solr-$version/dist/apache-solr-$version.war",
+    source  => "/tmp/solr-$version/dist/solr-$version.war",
     require => Exec["tar xfz $tmpfile"],
     notify  => Service['tomcat7'],
   }
